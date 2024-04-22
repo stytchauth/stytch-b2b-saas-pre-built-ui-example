@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import screenshot from "../images/app-screenshot.png";
+import Layout from "../layouts/marketing.astro";
+---
+
+<Layout title="Squircle">
+  <section class="hero">
+    <h1>Your B2B SaaS Product, powered by Stytch Auth.</h1>
+
+    <br />
+    <!-- <p>
+      I mean, honestly, we’re a little hurt you would even imply that. You’re so
+      mean sometimes
+    </p> -->
+
+    <p>
+      <a href="/dashboard" class="button">Start now &rsaquo;</a>
+    </p>
+  </section>
+
+  <div class="screenshot">
+    <Image
+      src={screenshot}
+      alt="Screenshot of the Squircle app"
+      width="1280"
+      height="720"
+    />
+  </div>
+</Layout>
+
+<style>
+  .hero {
+    margin-inline: auto;
+    padding-block: 4rem 2.5rem;
+    position: relative;
+    text-align: center;
+    width: min(90vw, 1280px);
+    z-index: 10;
+
+    & h1 {
+      font-size: clamp(2rem, 9cqw, 7.5rem);
+      font-weight: 900;
+      line-height: 1;
+      filter: drop-shadow(
+        0 0.1rem 0.2rem color-mix(in oklch, var(--bg), transparent 50%)
+      );
+      margin: 0;
+
+      & em {
+        background: var(--purple-gradient) text;
+        color: transparent;
+        font-style: normal;
+      }
+    }
+
+    & p {
+      font-size: clamp(0.875rem, 2.25cqw, 1.25rem);
+      margin-block-start: 1rem;
+      margin-inline: auto;
+      text-wrap: balance;
+      width: min(90vw, 45ch);
+
+      &:has(.button) {
+        margin-block-start: 2.5rem;
+      }
+    }
+  }
+
+  .button {
+    background: var(--purple-gradient);
+    border: 1px solid #4f315c;
+    border-radius: 3rem;
+    box-shadow: inset 0 -0.075rem 0.25rem color-mix(in oklch, var(--bg), transparent
+          25%);
+    color: var(--fg);
+    display: inline-block;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.1;
+    padding: 0.75rem 3rem;
+    text-decoration: none;
+  }
+
+  .screenshot {
+    margin-inline: auto;
+    position: relative;
+    width: min(90vw, 1280px);
+    z-index: 1;
+
+    & img {
+      aspect-ratio: 1280 / 720;
+      display: block;
+      height: auto;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+
+    &::after {
+      background-image: radial-gradient(
+        ellipse at center in oklch,
+        color-mix(in oklch, var(--brand), var(--bg) 55%),
+        color-mix(in oklch, var(--brand), var(--bg) 100%) 70%
+      );
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90% 70%;
+      content: "";
+      inset-block: -60% 0;
+      inset-inline: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+</style>

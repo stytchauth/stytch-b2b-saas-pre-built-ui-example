@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/base.astro';
+import { App } from '../../react/app';
+
+export const prerender = false;
+---
+
+<Layout title="Squircle Dashboard">
+	<App client:only />
+</Layout>
+
+<style>
+	body {
+		background: var(--color-gray-darkest);
+	}
+</style>

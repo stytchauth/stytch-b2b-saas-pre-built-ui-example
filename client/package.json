@@ -1,0 +1,29 @@
+{
+	"name": "stytch-b2b-saas-client",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.4",
+		"@astrojs/react": "^3.0.10",
+		"@stytch/react": "^17.0.0",
+		"@stytch/vanilla-js": "^4.9.0",
+		"@tanstack/react-query": "^5.21.7",
+		"@types/react": "^18.2.55",
+		"@types/react-dom": "^18.2.19",
+		"astro": "^4.4.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.22.1",
+		"typescript": "^5.3.3"
+	},
+	"devDependencies": {
+		"@tanstack/eslint-plugin-query": "^5.20.1"
+	}
+}

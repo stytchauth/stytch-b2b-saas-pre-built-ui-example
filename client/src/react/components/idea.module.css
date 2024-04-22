@@ -1,0 +1,31 @@
+.idea {
+	align-items: baseline;
+	border-block-end: 1px solid var(--border);
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: 1fr max-content 2rem;
+	padding: 0.75rem 1.5rem;
+}
+
+.controls {
+	& svg {
+		vertical-align: baseline;
+		width: 0.875rem;
+	}
+
+	& path {
+		transition: 0.15s fill linear;
+	}
+
+	&:is(:focus, :hover) path {
+		fill: var(--color-gray-medium);
+	}
+}
+
+.delete {
+	background: unset;
+	border: unset;
+	display: inline-block;
+	position: relative;
+	top: 0.125rem;
+}

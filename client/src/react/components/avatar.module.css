@@ -1,0 +1,7 @@
+.avatar img {
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	display: block;
+	height: auto;
+	width: 2.25rem;
+}
