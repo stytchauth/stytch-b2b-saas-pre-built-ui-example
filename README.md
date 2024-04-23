@@ -2,7 +2,7 @@
 
 This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview).  Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
 
-Features demonstrated:
+## Features
 
 - [Multi-tenancy in Stytch's data model](https://stytch.com/docs/b2b/guides/multi-tenancy)
 - [Role-Based Access Control (RBAC)](https://stytch.com/docs/b2b/guides/rbac/overview)
