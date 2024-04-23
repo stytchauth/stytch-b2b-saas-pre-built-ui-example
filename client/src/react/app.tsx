@@ -44,7 +44,7 @@ import {
 	useNavigate
 } from 'react-router-dom';
 
-import { AuthFlowType, B2BOAuthProviders, B2BProducts, StytchB2BUIClient, StytchEventType } from '@stytch/vanilla-js/dist/b2b';
+import { AuthFlowType, B2BOAuthProviders, B2BProducts, StytchB2BUIClient, StytchEventType } from '@stytch/vanilla-js/b2b';
 import logo from '../images/squircle-logo-purple.png';
 import styles from './app.module.css';
 import * as Pages from './components/pages';
