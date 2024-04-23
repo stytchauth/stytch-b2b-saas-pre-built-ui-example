@@ -64,11 +64,7 @@ If you don't have one already, in the [Stytch Dashboard][stytch-dashboard], clic
 
 Configure the following [Redirect URLs](https://stytch.com/docs/b2b/guides/dashboard/redirect-urls) for your project in the [Stytch Dashboard Redirect URLs][stytch-dashboard-redirect-urls] page:
 
-- `http://localhost:3000/auth/redirect` Set as **default** for **Login, Signup, Invite, Reset Password and Discovery** types.
-
-- `http://localhost:3000/authenticate` with **Login, Signup, Invite, Reset Password and Discovery** types.
-
-- `http://localhost:4321/dashboard/login` with **Login** type.
+- `http://localhost:4321/dashboard/login` Set as **DEFAULT** for **Login, Signup, Invite, Reset Password and Discovery** types.
 
 
 #### Configure Frontend SDK in the Stytch Dashboard
