@@ -1,11 +1,13 @@
 # Stytch B2B App Demo - Pre-built UI
 
-This is an example of a SaaS app using [Stytch's B2B][stytch-b2b] auth for:
+This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview).  Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
 
-- Multi-tenancy
-- RBAC
-- Organization and member settings management via your own UI
-- Multi-modal login (magic link and OAuth implemented)
+Features demonstrated:
+
+- [Multi-tenancy in Stytch's data model](https://stytch.com/docs/b2b/guides/multi-tenancy)
+- [Role-Based Access Control (RBAC)](https://stytch.com/docs/b2b/guides/rbac/overview)
+- [Stytch Organization](https://stytch.com/docs/b2b/guides/organizations/org-settings) and member settings management via your own UI
+- Supports multiple authentication methods ([Email Magic Link (EML)](https://stytch.com/docs/b2b/guides/magic-links/send-login-or-signup-eml) and [OAuth](https://stytch.com/docs/b2b/guides/oauth/login) implemented)
 
 This demo is specifically designed to be a reference for anyone building their own B2B SaaS application. The auth-specific logic is well documented, and the demo code kept simple and separate for easy review and subsequent deletion.
 
@@ -36,10 +38,10 @@ For local development, you'll need:
 
 ```bash
 # clone the repo
-gh repo clone stytchauth/stytch-b2b-saas-example
+gh repo clone stytchauth/stytch-b2b-saas-pre-built-ui-example
 
 # move into the cloned project
-cd stytch-b2b-saas-example/
+cd stytch-b2b-saas-pre-built-ui-example/
 
 # install dependencies
 cd client/
@@ -169,6 +171,7 @@ From here, you should be able to open the site in your browser, and clicking on 
 
 
 
+[stytch]: https://stytch.com
 [stytch-dashboard]: https://stytch.com/dashboard/
 [stytch-dashboard-redirect-urls]: https://stytch.com/dashboard/redirect-urls
 [stytch-b2b]: https://stytch.com/b2b
