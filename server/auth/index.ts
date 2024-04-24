@@ -1,6 +1,6 @@
-import type { CookieOptions, Request, RequestHandler, Response } from 'express';
-import * as stytch from 'stytch';
-import { addUser, getUser } from '../db/index.js';
+import type { CookieOptions, Request, RequestHandler, Response } from "express";
+import * as stytch from "stytch";
+import { addUser, getUser } from "../db/index.js";
 
 /**
  * Options for setting cookies.
@@ -10,7 +10,7 @@ import { addUser, getUser } from '../db/index.js';
  * @default { path : '/' }
  * @see https://www.npmjs.com/package/cookies#cookiessetname--values--options
  */
-export const cookieOptions: CookieOptions = { path: '/' };
+export const cookieOptions: CookieOptions = { path: "/" };
 
 /**
  * The URL for the Stytch API changes based on the environment you’re working
@@ -20,9 +20,9 @@ export const cookieOptions: CookieOptions = { path: '/' };
  * @see https://stytch.com/docs/b2b/guides/dashboard/api-keys
  */
 export const stytchEnv =
-	process.env.STYTCH_PROJECT_ENV === 'live'
-		? stytch.envs.live
-		: stytch.envs.test;
+  process.env.STYTCH_PROJECT_ENV === "live"
+    ? stytch.envs.live
+    : stytch.envs.test;
 
 /**
  * Make it possible to load the Stytch SDK’s B2B client anywhere in the backend
@@ -32,44 +32,40 @@ export const stytchEnv =
  */
 let client: stytch.B2BClient;
 export const loadStytch = () => {
-	if (!client) {
-		client = new stytch.B2BClient({
-			project_id: process.env.STYTCH_PROJECT_ID ?? '',
-			secret: process.env.STYTCH_SECRET ?? '',
-			env: stytchEnv,
-		});
-	}
+  if (!client) {
+    client = new stytch.B2BClient({
+      project_id: process.env.STYTCH_PROJECT_ID ?? "",
+      secret: process.env.STYTCH_SECRET ?? "",
+      env: stytchEnv,
+    });
+  }
 
-	return client;
+  return client;
 };
 
 /**
  * Helper method to get member and organization info from the Stytch session.
  *
  */
-export async function getAuthenticatedUserInfo({
-	req,
-}: {
-	req: Request;
-}) {
-	const stytch = loadStytch();
+export async function getAuthenticatedUserInfo({ req }: { req: Request }) {
+  const stytch = loadStytch();
 
-	const sessionToken = req.cookies.stytch_session;
+  const sessionToken = req.cookies.stytch_session;
 
-    let sessionAuthRes;
-    try {
-      sessionAuthRes = await stytch.sessions.authenticate({
-        session_token: sessionToken,
-      });
-    } catch (err) {
-      console.error("Could not find member by session token", err);
-    }
+  let sessionAuthRes;
+  try {
+    sessionAuthRes = await stytch.sessions.authenticate({
+      session_token: sessionToken,
+    });
+  } catch (err) {
+    console.error("Could not find member by session token", err);
+  }
 
-	return {
-		member: sessionAuthRes?.member,
-		organization: sessionAuthRes?.organization,
-	}
-};
+  return {
+    member: sessionAuthRes?.member,
+    organization: sessionAuthRes?.organization,
+  };
+}
 
 /**
  * A helper for exchanging Stytch intermediate tokens for a fully authenticated
@@ -83,39 +79,39 @@ export async function getAuthenticatedUserInfo({
  * @see https://stytch.com/docs/b2b/sdks/javascript-sdk/resources/cookies-and-session-management
  */
 export async function exchangeIntermediateToken({
-	res,
-	intermediate_session_token,
-	organization_id,
+  res,
+  intermediate_session_token,
+  organization_id,
 }: {
-	res: Response;
-	intermediate_session_token: string;
-	organization_id: string;
+  res: Response;
+  intermediate_session_token: string;
+  organization_id: string;
 }) {
-	const stytch = loadStytch();
+  const stytch = loadStytch();
 
-	const session = await stytch.discovery.intermediateSessions.exchange({
-		intermediate_session_token,
-		organization_id,
-	});
+  const session = await stytch.discovery.intermediateSessions.exchange({
+    intermediate_session_token,
+    organization_id,
+  });
 
-	if (session.status_code !== 200) {
-		res.status(session.status_code).json(session);
-		return;
-	}
+  if (session.status_code !== 200) {
+    res.status(session.status_code).json(session);
+    return;
+  }
 
-	res.clearCookie('discovered_orgs');
-	res.clearCookie('intermediate_token');
+  res.clearCookie("discovered_orgs");
+  res.clearCookie("intermediate_token");
 
-	// Ensure the member exists in the database
-	const { member } = session;
-	const currentMember = await getUser(member.member_id);
-	if (!currentMember?.id) {
-		await addUser({ id: member.member_id, name: member.name });
-	}
+  // Ensure the member exists in the database
+  const { member } = session;
+  const currentMember = await getUser(member.member_id);
+  if (!currentMember?.id) {
+    await addUser({ id: member.member_id, name: member.name });
+  }
 
-	// Set cookies needed for the Stytch SDK's
-	// https://stytch.com/docs/b2b/sdks/javascript-sdk/resources/cookies-and-session-management
-	res.cookie('stytch_session', session.session_token, cookieOptions);
+  // Set cookies needed for the Stytch SDK's
+  // https://stytch.com/docs/b2b/sdks/javascript-sdk/resources/cookies-and-session-management
+  res.cookie("stytch_session", session.session_token, cookieOptions);
 }
 
 /**
@@ -124,24 +120,24 @@ export async function exchangeIntermediateToken({
  * @see https://stytch.com/docs/b2b/api/authenticate-session
  */
 export function authenticate(): RequestHandler {
-	const stytch = loadStytch();
+  const stytch = loadStytch();
 
-	return async (req, res, next) => {
-		try {
-			const response = await stytch.sessions.authenticate({
-				session_token: req.cookies.stytch_session,
-			});
+  return async (req, res, next) => {
+    try {
+      const response = await stytch.sessions.authenticate({
+        session_token: req.cookies.stytch_session,
+      });
 
-			if (response.session_token) {
-				next();
-			} else {
-				throw new Error('Unauthorized');
-			}
-		} catch (err) {
-			res.status(401).json({ message: 'Unauthorized' });
-			res.end();
-		}
-	};
+      if (response.session_token) {
+        next();
+      } else {
+        throw new Error("Unauthorized");
+      }
+    } catch (err) {
+      res.status(401).json({ message: "Unauthorized" });
+      res.end();
+    }
+  };
 }
 
 /**
@@ -153,32 +149,31 @@ export function authenticate(): RequestHandler {
  * @see https://stytch.com/docs/b2b/api/authenticate-session
  */
 export function authenticateAndAuthorize(
-	resource: string,
-	action: string,
+  resource: string,
+  action: string,
 ): RequestHandler {
-	const stytch = loadStytch();
+  const stytch = loadStytch();
 
+  return async (req, res, next) => {
+    try {
+      const { member } = await getAuthenticatedUserInfo({ req });
+      const response = await stytch.sessions.authenticate({
+        session_token: req.cookies.stytch_session,
+        authorization_check: {
+          organization_id: member!.organization_id,
+          resource_id: resource,
+          action,
+        },
+      });
 
-	return async (req, res, next) => {
-		try {
-			const { member } = await getAuthenticatedUserInfo({ req })
-			const response = await stytch.sessions.authenticate({
-				session_token: req.cookies.stytch_session,
-				authorization_check: {
-					organization_id: member!.organization_id,
-					resource_id: resource,
-					action,
-				},
-			});
-
-			if (response.verdict?.authorized) {
-				next();
-			} else {
-				throw new Error('Unauthorized');
-			}
-		} catch (err) {
-			res.status(401).json({ message: 'Unauthorized' });
-			res.end();
-		}
-	};
+      if (response.verdict?.authorized) {
+        next();
+      } else {
+        throw new Error("Unauthorized");
+      }
+    } catch (err) {
+      res.status(401).json({ message: "Unauthorized" });
+      res.end();
+    }
+  };
 }

@@ -1,7 +1,15 @@
-import styles from './button.module.css';
+import styles from "./button.module.css";
 
 // @ts-ignore
-const Button = ({ children, type, href }: { children: string, type: string, href?: string}) => {
+const Button = ({
+  children,
+  type,
+  href,
+}: {
+  children: string;
+  type: string;
+  href?: string;
+}) => {
   // const logoImg = logo ? <img src={logo} alt={`${type} logo`} className={styles.logo} /> : null;
   const buttonContent = (
     <>

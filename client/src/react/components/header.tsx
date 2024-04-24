@@ -1,16 +1,16 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 export const Header = ({
-	heading,
-	children,
+  heading,
+  children,
 }: {
-	heading: string;
-	children?: ReactNode;
+  heading: string;
+  children?: ReactNode;
 }) => {
-	return (
-		<header>
-			<h1>{heading}</h1>
-			{children}
-		</header>
-	);
+  return (
+    <header>
+      <h1>{heading}</h1>
+      {children}
+    </header>
+  );
 };

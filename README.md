@@ -1,6 +1,6 @@
 # Stytch B2B App Demo - Pre-built UI
 
-This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview).  Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
+This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview). Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
 
 ## Features
 
@@ -59,13 +59,11 @@ Note: In development, this app assumes the `test` Stytch environment, which can 
 
 If you don't have one already, in the [Stytch Dashboard][stytch-dashboard], click on your existing project name in the top left corner of the Dashboard, click **Create a new project**, and then select **B2B Authentication** or select the project you want to use for this app.
 
-
 #### Configure Redirect URLs
 
 Configure the following [Redirect URLs](https://stytch.com/docs/b2b/guides/dashboard/redirect-urls) for your project in the [Stytch Dashboard Redirect URLs][stytch-dashboard-redirect-urls] page:
 
 - `http://localhost:4321/dashboard/login` Set as **DEFAULT** for **Login, Signup, Invite, Reset Password and Discovery** types.
-
 
 #### Configure Frontend SDK in the Stytch Dashboard
 
@@ -74,16 +72,16 @@ In the [Frontend SDK Configuration](https://stytch.com/dashboard/sdk-configurati
 - In the **Authorized applications** section add `http://localhost:4321` as an authorized domain in addition to `http://localhost:3000`.
 
 - In the **Enabled methods** section:
-    - **Member actions & permissions** must be **enabled**.  To learn more about our RBAC implementation, see our [RBAC guide][stytch-rbac-guide].
 
-    - **Create organizations** must be **enabled**.
+  - **Member actions & permissions** must be **enabled**. To learn more about our RBAC implementation, see our [RBAC guide][stytch-rbac-guide].
 
+  - **Create organizations** must be **enabled**.
 
 #### Create the required resource and actions and assign to Stytch Default Roles
 
 [Stytch's Role-Based Access Control (RBAC)](https://stytch.com/docs/b2b/guides/rbac/getting-started) solution is an authorization model that manages access to resources within your application. Our RBAC model streamlines the management and enforcement of permissions with a flexible interface that's designed for a multi-tenant auth system.
 
-We will be leverage the `stytch_admin` and `stytch_member` created by default for each project [Stytch Resources & Roles  Stytch B2B SaaS Authentication](https://stytch.com/docs/b2b/guides/rbac/stytch-defaults) and creating a resource `idea`, with CRUD actions.
+We will be leverage the `stytch_admin` and `stytch_member` created by default for each project [Stytch Resources & Roles Stytch B2B SaaS Authentication](https://stytch.com/docs/b2b/guides/rbac/stytch-defaults) and creating a resource `idea`, with CRUD actions.
 
 In your Stytch dashboard under [Roles & Permissions > Resources](https://stytch.com/dashboard/rbac?env=test&type=Resources), create a resource called `idea`. Give the `idea` resource the following actions:
 
@@ -94,7 +92,7 @@ In your Stytch dashboard under [Roles & Permissions > Resources](https://stytch.
 
 ![the idea resource in the Stytch dashboard](doc/dashboard-stytch-resources.jpg)
 
-Navigate to [Roles & Permissions](https://stytch.com/dashboard/rbac?env=test&type=Roles) and 
+Navigate to [Roles & Permissions](https://stytch.com/dashboard/rbac?env=test&type=Roles) and
 
 - Update the `stytch_admin` role to allow all actions for the `idea` with `*`
 
@@ -103,7 +101,6 @@ Navigate to [Roles & Permissions](https://stytch.com/dashboard/rbac?env=test&typ
 - Update the `stytch_member` role with `create` and `read` actions
 
 ![stytch_member role with create and read actions](doc/dashboard-stytch-member-idea-config.png)
-
 
 This allows `stytch_member`'s to create and read ideas and `stytch_admin` with all CRUD functionality that we can leverage for our application logic, enforced by Stytch.
 
@@ -164,8 +161,6 @@ This will start the client at `localhost:4321`.
 From here, you should be able to open the site in your browser, and clicking on the "Dashboard" or "Start now" links will take you to the login page, which will let you register for your app and create an organization.
 
 > **NOTE:** In test mode, you can only use emails matching the domain you signed up with. Trying to use other emails will result in Stytch errors.
-
-
 
 [stytch]: https://stytch.com
 [stytch-dashboard]: https://stytch.com/dashboard/

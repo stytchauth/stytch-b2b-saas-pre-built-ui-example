@@ -1,29 +1,29 @@
 {
-	"name": "stytch-b2b-saas-client",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/check": "^0.5.10",
-		"@astrojs/react": "^3.3.0",
-		"@stytch/react": "^17.0.0",
-		"@stytch/vanilla-js": "^4.9.1",
-		"@tanstack/react-query": "^5.32.0",
-		"@types/react": "^18.2.79",
-		"@types/react-dom": "^18.2.25",
-		"astro": "^4.6.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.23.0",
-		"typescript": "^5.4.5"
-	},
-	"devDependencies": {
-		"@tanstack/eslint-plugin-query": "^5.28.11"
-	}
+  "name": "stytch-b2b-saas-client",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.3.0",
+    "@stytch/react": "^17.0.0",
+    "@stytch/vanilla-js": "^4.9.1",
+    "@tanstack/react-query": "^5.32.0",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "astro": "^4.6.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.28.11"
+  }
 }

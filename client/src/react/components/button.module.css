@@ -1,40 +1,40 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  width: 100%;
 
-    &:not(:last-child) {
-      padding-bottom: 10px;
-    }
+  &:not(:last-child) {
+    padding-bottom: 10px;
+  }
 
-    &:hover {
-      opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }
-  
+
 .logo {
   margin-right: 8px;
 }
-  
+
 .google {
   background-color: #fff;
   color: #757575;
 }
-  
+
 .microsoft {
-background-color: #fff;
-color: #757575;
+  background-color: #fff;
+  color: #757575;
 }
 
 .email {
-  background-color: #0078D4;
+  background-color: #0078d4;
   color: #fff;
 }
