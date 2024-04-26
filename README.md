@@ -1,6 +1,20 @@
 # Stytch B2B App Demo - Pre-built UI
 
+<p align="center">
+  <img alt="Stytch B2B SaaS App - Pre-built UI" src="./doc/Stytch-B2B-app-prebuilt.png" />
+</p>
+
+> 💬 **Note from maintainers**
+>
+> This application is purely for demonstration and educational purposes. Its setup and configuration resemble typical real-world applications, but it's not a full-fledged production system. Use this app to learn, experiment and tinker with [Stytch][stytch].
+>
+> Happy Coding!
+
 This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview). Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
+
+
+## 👀 Looking for an example of [Stytch B2B with a headless/custom UI][stytch-headless-ui]? 👀
+### See [stytchauth/stytch-b2b-saas-headless-example][b2b-headless-ui-gh]
 
 ## Features
 
@@ -167,3 +181,6 @@ From here, you should be able to open the site in your browser, and clicking on 
 [stytch-dashboard-redirect-urls]: https://stytch.com/dashboard/redirect-urls
 [stytch-b2b]: https://stytch.com/b2b
 [stytch-rbac-guide]: https://stytch.com/docs/b2b/guides/rbac/overview
+
+[stytch-headless-ui]: https://stytch.com/docs/b2b/guides/implementation/frontend-headless
+[b2b-headless-ui-gh]: https://github.com/stytchauth/stytch-b2b-saas-headless-example
