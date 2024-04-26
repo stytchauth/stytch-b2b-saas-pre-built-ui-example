@@ -23,9 +23,7 @@ This demo app is focused on demonstrating the power and flexibility of [Stytch](
 - [Stytch Organization](https://stytch.com/docs/b2b/guides/organizations/org-settings) and member settings management via your own UI
 - Supports multiple authentication methods ([Email Magic Link (EML)](https://stytch.com/docs/b2b/guides/magic-links/send-login-or-signup-eml) and [OAuth](https://stytch.com/docs/b2b/guides/oauth/login) implemented)
 
-This demo is specifically designed to be a reference for anyone building their own B2B SaaS application. The auth-specific logic is well documented, and the demo code kept simple and separate for easy review and subsequent deletion.
-
-The source code is thoroughly documented inline, including links to the underlying API calls being used.
+The auth-specific logic is well documented, including links to the underlying API calls being used, and the demo code kept simple and separate for easy review and subsequent deletion.
 
 ## Project Structure
 
