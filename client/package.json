@@ -24,6 +24,8 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.28.11"
-  }
+    "@tanstack/eslint-plugin-query": "^5.28.11",
+    "prettier": "^3.2.5"
+  },
+  "prettier": {}
 }
