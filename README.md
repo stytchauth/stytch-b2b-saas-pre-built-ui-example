@@ -21,7 +21,7 @@ This demo app is focused on demonstrating the power and flexibility of [Stytch](
 - [Multi-tenancy in Stytch's data model](https://stytch.com/docs/b2b/guides/multi-tenancy)
 - [Role-Based Access Control (RBAC)](https://stytch.com/docs/b2b/guides/rbac/overview)
 - [Stytch Organization](https://stytch.com/docs/b2b/guides/organizations/org-settings) and member settings management via your own UI
-- Supports multiple authentication methods ([Email Magic Link (EML)](https://stytch.com/docs/b2b/guides/magic-links/send-login-or-signup-eml) and [OAuth](https://stytch.com/docs/b2b/guides/oauth/login) implemented)
+- Supports multiple authentication methods ([Email Magic Link (EML)](https://stytch.com/docs/b2b/guides/magic-links/overview) and [OAuth](https://stytch.com/docs/b2b/guides/oauth/overview) implemented)
 
 The auth-specific logic is well documented, including links to the underlying API calls being used, and the demo code kept simple and separate for easy review and subsequent deletion.
 
