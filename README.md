@@ -1,4 +1,4 @@
-# Stytch B2B App Demo - Pre-built UI
+# Stytch B2B App example - Pre-built UI
 
 <p align="center">
   <img alt="Stytch B2B SaaS App - Pre-built UI" src="./doc/Stytch-B2B-app-prebuilt.png" />
@@ -10,7 +10,7 @@
 >
 > Happy Coding!
 
-This demo app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview). Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
+This example app is focused on demonstrating the power and flexibility of [Stytch](stytch) in [B2B Authentication](https://stytch.com/b2b) scenarios from a **frontend-focused** approach, leveraging [Stytch Pre-built B2B UI components](https://stytch.com/docs/b2b/guides/ui-components/overview). Custom functionality is achieved using [Stytch Frontend SDKs](https://stytch.com/docs/b2b/guides/implementation/frontend-headless) and direct calls to the [Stytch Backend API](https://stytch.com/docs/b2b/guides/implementation/backend).
 
 
 ## 👀 Looking for an example of [Stytch B2B with a headless/custom UI][stytch-headless-ui]? 👀
@@ -23,7 +23,7 @@ This demo app is focused on demonstrating the power and flexibility of [Stytch](
 - [Stytch Organization](https://stytch.com/docs/b2b/guides/organizations/org-settings) and member settings management via your own UI
 - Supports multiple authentication methods ([Email Magic Link (EML)](https://stytch.com/docs/b2b/guides/magic-links/overview) and [OAuth](https://stytch.com/docs/b2b/guides/oauth/overview) implemented)
 
-The auth-specific logic is well documented, including links to the underlying API calls being used, and the demo code kept simple and separate for easy review and subsequent deletion.
+The auth-specific logic is well documented, including links to the underlying API calls being used, and the example code kept simple and separate for easy review and subsequent deletion.
 
 ## Project Structure
 
