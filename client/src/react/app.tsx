@@ -344,7 +344,10 @@ const LoginPage = () => {
     },
     callbacks: {
       onEvent: ({ type, data }: { type: StytchEventType; data: any }) => {
-        if (type === StytchEventType.B2BDiscoveryIntermediateSessionExchange) {
+        if (
+          type === StytchEventType.B2BDiscoveryIntermediateSessionExchange ||
+          type === StytchEventType.B2BDiscoveryOrganizationsCreate
+        ) {
           if (data.hasOwnProperty("member")) {
             const api = new URL(
               "/api/add-member",
