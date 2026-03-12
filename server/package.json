@@ -22,7 +22,7 @@
     "cors": "^2.8.5",
     "drizzle-orm": "^0.30.9",
     "express": "^4.21.0",
-    "stytch": "^11.4.2"
+    "stytch": "^11.11.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.10",
